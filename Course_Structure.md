@@ -7,3 +7,9 @@
 - virtualDom (diffing algorithm)
 - ReactDom.render()
 - jsx
+
+### 2-lesson 
+- props, component
+- props.children
+- export import
+- components
