@@ -9,27 +9,16 @@ export class State extends Component {
     }
   }
   render() {
-    const onChangeName = e => {
-      this.setState({
-        name: e.target.value
-      })
-    }
-    const onChangeSurname = e => {
-      console.log(e);
-      this.setState({
-        surname: e.target.value
-      })
-
+    const onChange = (event) => {
+      this.setState({[event.target.name]: event.target.value})
     }
     return (
       <div>
         <form action="#">
           <h2>Name {this.state.name}</h2>
           <h2>Surname {this.state.surname}</h2>
-          <input onChange={onChangeName} type="text" placeholder="name" />
-          <input onChange={onChangeSurname} type="text" placeholder="surname" />
-          <input onChange={(e) => onChangeSurname(e,"hey")} type="text" placeholder="surname" />
-
+          <input name="name" onChange={onChange} type="text" placeholder="name" />
+          <input name="surname" onChange={onChange} type="text" placeholder="surname" />
         </form>
       </div>
     )
