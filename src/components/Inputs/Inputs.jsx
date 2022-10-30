@@ -14,6 +14,11 @@ export class Inputs extends Component {
     const onSelect = (e) => {
       console.log(e.target.value);
     }
+    const onCheck = (e) => {
+      console.log(e.target.name);
+      console.log(e.target.checked);
+
+    }
     return(
       <form>
         <h1>This is {this.state.title}</h1>
@@ -22,6 +27,7 @@ export class Inputs extends Component {
           <option value="male">male</option>
           <option value="female">female</option>
         </select>
+        <input onChange={onCheck} type="checkbox" name="checkbox" />
       </form>
     )
   }
