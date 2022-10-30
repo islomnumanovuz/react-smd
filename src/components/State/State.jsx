@@ -15,9 +15,11 @@ export class State extends Component {
       })
     }
     const onChangeSurname = e => {
+      console.log(e);
       this.setState({
         surname: e.target.value
       })
+
     }
     return (
       <div>
@@ -26,6 +28,8 @@ export class State extends Component {
           <h2>Surname {this.state.surname}</h2>
           <input onChange={onChangeName} type="text" placeholder="name" />
           <input onChange={onChangeSurname} type="text" placeholder="surname" />
+          <input onChange={(e) => onChangeSurname(e,"hey")} type="text" placeholder="surname" />
+
         </form>
       </div>
     )
