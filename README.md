@@ -9,6 +9,19 @@
 - ReactDom.render()
 - jsx
 
+### 2-lesson 
+- props, component
+- props.children
+- export import
+- components
+
+### 3-lesson
+- State 
+- constructor
+- super
+- event onChange, onClick
+- input, checkbox, select
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
