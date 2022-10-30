@@ -20,3 +20,8 @@
 - super
 - event onChange, onClick
 - input, checkbox, select
+
+### 4-lesson
+- function call
+- multi state change 
+- student list - add delete filter
