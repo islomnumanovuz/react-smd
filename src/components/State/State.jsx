@@ -1,6 +1,10 @@
 import React, {Component} from "react";
 
 export class State extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
   render() {
     const count = 0;
     return (
