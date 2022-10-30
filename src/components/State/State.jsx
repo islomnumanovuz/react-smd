@@ -3,24 +3,25 @@ import React, {Component} from "react";
 export class State extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      count: 1,
+      title: "Webbrain academy"
+    }
     console.log("constructor");
   }
   render() {
     console.log('render');
-    let count = 0;
+    // let count = 0;
     const plus = () => {
-      count += 1
-      console.log(count);
+      if(this.state.count < 10) this.setState({count: this.state.count + 1})
     }
     const minus = () => {
-      count -= 1
-      console.log(count);
+      if(this.state.count > 1) this.setState({count: this.state.count - 1})
     }
     return (
       <div>
-        <h1>Hi webbrain academy</h1>
-        <h3>Count: {count}</h3>
+        <h1>Hi {this.state.title}</h1>
+        <h3>Count: {this.state.count}</h3>
         <button onClick={minus}>-</button>
         <button onClick={plus}>+</button>
       </div>
