@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Table } from './components/Table/Table';
 import './index.css';
-import { State } from './components/State/State';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <State/>
+    <Table/>
   </React.StrictMode>
 );
