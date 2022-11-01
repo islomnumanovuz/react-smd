@@ -25,3 +25,11 @@
 - function call
 - multi state change 
 - student list - add delete filter
+
+### 5-lesson
+
+### 6-lesson
+- styled component
+- {css}
+- props in styled component
+- function call
