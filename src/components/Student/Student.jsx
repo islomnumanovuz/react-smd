@@ -12,7 +12,6 @@ export class Student extends  Component{
 
     const onDelete = (id) => {
       let result = this.state.data.filter((item) => item.id !== id)
-      console.log(result);
       this.setState({data: result})
     }
 
@@ -23,16 +22,16 @@ export class Student extends  Component{
         <thead>
           <tr>
             <th colSpan={6}>
-            <h6 className="text-center">Search item</h6>
-        <div className="input-group input-group-sm">
-        <input type="text" className="form-control" placeholder="Id" 
-          aria-label="Id" />
-          <input type="text" className="form-control" placeholder="Name" aria-label="Name" />
-          <input type="text" className="form-control" placeholder="Status" 
-          aria-label="Status" />
-          <span className="input-group-text">{this.state.data.length}</span>
+              <h6 className="text-center">Search item</h6>
+              <div className="input-group input-group-sm">
+              <input type="text" className="form-control" placeholder="Id" 
+                aria-label="Id" />
+                <input type="text" className="form-control" placeholder="Name" aria-label="Name" />
+                <input type="text" className="form-control" placeholder="Status" 
+                aria-label="Status" />
+                <span className="input-group-text">{this.state.data.length}</span>
 
-        </div>
+              </div>
             </th>
           </tr>
           <tr>
@@ -46,6 +45,7 @@ export class Student extends  Component{
         </thead>
         <tbody>
           {
+            this.state.data.length ?
             this.state.data.map(({id, name, age, status, address}) => {
               return(
                 <tr key={id}>
@@ -64,7 +64,12 @@ export class Student extends  Component{
                   </td>
                 </tr>
               )
-            })
+            }) :
+            <tr>
+              <td colSpan={6}>
+                <h2 className="text-center">Ooops no data :(</h2>
+              </td>
+            </tr>
           }
         </tbody>
         </table>
