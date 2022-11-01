@@ -10,6 +10,7 @@ export class Student extends  Component{
       age: "",
       address: "",
       status: "",
+      search: "id"
 
     }
   }
@@ -20,7 +21,7 @@ export class Student extends  Component{
     }
     const onSearch = (e) => {
       const {value} = e.target
-      let result = data.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
+      let result = data.filter((item) => `${item[this.state.search]}`.toLowerCase().includes(value.toLowerCase()))
       this.setState({data: result})
     }
 
@@ -43,6 +44,9 @@ export class Student extends  Component{
         address: "",
         status: "",
       })
+    }
+    const onSelect = (event) => {
+      this.setState({search: event.target.value})
     }
 
     return (
@@ -68,11 +72,13 @@ export class Student extends  Component{
               <div className="input-group input-group-sm pb-1">
                 <input onChange={onSearch} type="text" className="form-control" placeholder="Search" aria-label="Dollar amount (with dot and two decimal places)" />
                 <span className="input-group-text">
-                  <select className="form-select" aria-label="Default select example">
-                    <option selected>Search by</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                  <select onChange={onSelect} className="form-select" aria-label="Default select example">
+                    <option hidden >Search by</option>
+                    <option value="id">Id</option>
+                    <option value="name">Name</option>
+                    <option value="address">Address</option>
+                    <option value="status">Status</option>
+
                   </select>
                 </span>
                
