@@ -19,6 +19,21 @@ export class Student extends  Component{
     return (
       <div className="container">
         <div className="wrapper">
+        <div className="inputs">
+					<input
+						placeholder="Search by Id"
+						name="id"
+					></input>
+					<input
+						placeholder="Search by Name"
+						name="name"
+					></input>
+					<input
+						placeholder="Search by Status"
+						name="status"
+					></input>
+				</div>
+        
         <table>
         <thead>
           <tr>
@@ -53,7 +68,7 @@ export class Student extends  Component{
             })
           }
         </tbody>
-      </table>
+        </table>
         </div>
       </div>
     )
