@@ -10,7 +10,8 @@ export class Student extends  Component{
       age: "",
       address: "",
       status: "",
-      search: "id"
+      search: "id",
+      active: null,
 
     }
   }
@@ -48,7 +49,20 @@ export class Student extends  Component{
     const onSelect = (event) => {
       this.setState({search: event.target.value})
     }
-
+    const onEdit = ({id, name, status, age, address}, isSave) => {
+      if(isSave) {
+        let res = this.state.data.map((value) => value.id === this.state.active.id ? {...value, name: this.state.name, status: this.state.status,address: this.state.address, age: this.state.age} : value)
+        this.setState({active: null, data: res})
+      }else {
+        this.setState({
+          name: name,
+          age: age,
+          address: address,
+          status: status,
+          active: {id, name, status, age, address}
+        })
+      }
+    }
     return (
       <div className="container">
         <div className="wrapper">
@@ -101,17 +115,42 @@ export class Student extends  Component{
               return(
                 <tr key={id}>
                   <td>{id}</td>
-                  <td>{name}</td>
-                  <td>{age}</td>
-                  <td>{address}</td>
-                  <td>{status}</td>
+                  <td>
+                    {
+                      this.state.active?.id === id ? <div className="input-group input-group-sm">
+                        <input onChange={onChange} name="name" value={this.state.name} type="text" className="form-control text-sm" />
+                      </div> : name
+                    }
+                    
+                  </td>
+                  <td>
+                  {
+                      this.state.active?.id === id ? <div className="input-group input-group-sm">
+                        <input onChange={onChange} name="name" value={this.state.name} type="text" className="form-control text-sm" />
+                      </div> : age
+                    }
+                  </td>
+                  <td>{
+                      this.state.active?.id === id ? <div className="input-group input-group-sm">
+                        <input onChange={onChange} name="address" value={this.state.address} type="text" className="form-control text-sm" />
+                      </div> : address
+                    }</td>
+                  <td>{
+                      this.state.active?.id === id ? <div className="input-group input-group-sm">
+                        <input onChange={onChange} name="status" value={this.state.status} type="text" className="form-control text-sm" />
+                      </div> : status
+                    }</td>
                   <td>
                     <button className="btn btn-outline-danger" onClick={() => onDelete(id)}>
                       Delete
                     </button>
-                    <button className="btn btn-outline-secondary">
-                      Edit
-                    </button>
+                       
+                      <button onClick={() => onEdit({id, name, status, age, address}, this.state.active?.id === id)} className="btn btn-outline-secondary">
+                    {
+                      this.state.active?.id === id ? "Save" : "Edit"
+                    }
+                    </button> 
+                    
                   </td>
                 </tr>
               )
