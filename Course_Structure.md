@@ -25,3 +25,7 @@
 - function call
 - multi state change 
 - student list - add delete filter
+
+### 5-lesson
+- state crud
+- advanced, edit, filter
