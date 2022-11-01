@@ -18,6 +18,11 @@ export class Student extends  Component{
       this.setState({[event.target.name]: event.target.value})
 
     }
+    const onSearch = (e) => {
+      const {value} = e.target
+      let result = data.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
+      this.setState({data: result})
+    }
 
     const onDelete = (id) => {
       let result = this.state.data.filter((item) => item.id !== id)
@@ -59,6 +64,18 @@ export class Student extends  Component{
                 
                 <button className="btn btn-primary" onClick={onAdd}>Add item</button>
 
+              </div>
+              <div className="input-group input-group-sm pb-1">
+                <input onChange={onSearch} type="text" className="form-control" placeholder="Search" aria-label="Dollar amount (with dot and two decimal places)" />
+                <span className="input-group-text">
+                  <select className="form-select" aria-label="Default select example">
+                    <option selected>Search by</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </span>
+               
               </div>
             </th>
           </tr>
