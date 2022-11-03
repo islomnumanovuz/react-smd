@@ -10,5 +10,10 @@ const Title = styled.h2`
   text-align: center;
   color: white;
 `
-
-export {Container, Title}
+const Box = styled("div")`
+  width: ${(props) => props.type === "large" ? "200px" : "100px"};
+  height: ${(props) => props.type === "large" ? "200px" : "100px"};
+  background-color: blue;
+  border-radius: 50%;
+`
+export {Container, Title, Box}
