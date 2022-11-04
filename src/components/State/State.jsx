@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Box, Container, Description, Title} from "./StateStyle";
+import {Box, Button, Container, Description, Title} from "./StateStyle";
 
 export class State extends Component {
   constructor(props) {
@@ -27,6 +27,9 @@ export class State extends Component {
             <Box bgColor="red" type="large">First box</Box>
             <Box bgColor="coral" type="medium">Second box</Box>
             <Box bgColor="yellow" type="small">Third box</Box>
+            <Button type="button" danger>Danger</Button>
+            <Button type="button" state="primary">Primary</Button>
+
           </Container>
         </form>
       </div>
