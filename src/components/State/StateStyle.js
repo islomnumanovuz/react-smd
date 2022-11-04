@@ -6,6 +6,14 @@ const Container = styled("div")`
   background-color: green;
   padding: 20px;
 `
+const Button = styled("button")`
+  border: none;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 8px 15px;
+  color: white;
+  background-color: ${({danger}) => danger ? "red" : "blue"}
+`
 
 const commonCss = css`
   text-align: center;
@@ -47,4 +55,4 @@ const Box = styled("div")`
   height: ${getSize};
   background-color: ${(props) => props.bgColor}
 `
-export {Container, Title, Box, Description}
+export {Container, Title, Box, Description, Button}
