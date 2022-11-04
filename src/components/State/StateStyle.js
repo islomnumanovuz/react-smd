@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, {css} from "styled-components"
 
 const Container = styled("div")`
   width: 80%;
@@ -6,9 +6,23 @@ const Container = styled("div")`
   background-color: green;
   padding: 20px;
 `
-const Title = styled.h2`
+
+const commonCss = css`
   text-align: center;
   color: white;
+  font-size: 30px;
+  border: 1px solid black;
+  padding: 10px;
+`
+
+const Title = styled.h2`
+  ${commonCss}
+  font-size: 26px;
+`
+const Description = styled("h2")`
+  ${commonCss}
+  font-size: 20px;
+  color: pink;
 `
 const getSize = (props) => {
   switch (props.type) {
@@ -26,4 +40,4 @@ const Box = styled("div")`
   width: ${getSize};
   height: ${getSize};
 `
-export {Container, Title, Box}
+export {Container, Title, Box, Description}

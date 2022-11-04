@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Box, Container, Title} from "./StateStyle";
+import {Box, Container, Description, Title} from "./StateStyle";
 
 export class State extends Component {
   constructor(props) {
@@ -23,6 +23,7 @@ export class State extends Component {
           <hr/>
           <Container className="title">
             <Title className="subtitle">Styled component</Title>
+            <Description>hey I am common css feature</Description>
             <Box type="large"/>
             <Box type="medium"/>
             <Box type="small"/>
