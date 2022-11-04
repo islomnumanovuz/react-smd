@@ -24,9 +24,9 @@ export class State extends Component {
           <Container className="title">
             <Title className="subtitle">Styled component</Title>
             <Description>hey I am common css feature</Description>
-            <Box type="large"/>
-            <Box type="medium"/>
-            <Box type="small"/>
+            <Box bgColor="red" type="large">First box</Box>
+            <Box bgColor="coral" type="medium">Second box</Box>
+            <Box bgColor="yellow" type="small">Third box</Box>
           </Container>
         </form>
       </div>

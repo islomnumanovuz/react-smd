@@ -14,6 +14,11 @@ const commonCss = css`
   border: 1px solid black;
   padding: 10px;
 `
+const flex = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 const Title = styled.h2`
   ${commonCss}
@@ -33,11 +38,13 @@ const getSize = (props) => {
   }
 }
 const Box = styled("div")`
+  ${flex};
   width: ${(props) => props.type === "large" ? "200px" : "100px"};
   height: ${(props) => props.type === "large" ? "200px" : "100px"};
   background-color: blue;
   border-radius: 50%;
   width: ${getSize};
   height: ${getSize};
+  background-color: ${(props) => props.bgColor}
 `
 export {Container, Title, Box, Description}
